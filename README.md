@@ -9,7 +9,7 @@ Maven Central e adicionamos as bibliotecas do Selenium
 https://mvnrepository.com/repos/central  
 
 # 2. Classes  
-main >> nome_do_pacote >>    
+main >> nome_do_pacote >> nome_da_feature_page    
 Actions => Classe aonde a gente vai realizar as ações.   
 Screen => Classe aonde vamos mapear os elementos.    
 PageBase => Classe aonde vai conter funções genericas.  
