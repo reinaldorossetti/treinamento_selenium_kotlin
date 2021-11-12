@@ -17,13 +17,21 @@ PageBase => Classe aonde vai conter funções genericas.
 
 test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.   
 
-### 3. Instancia do Driver:  
+### 3. Instancia do Driver Configuração:  
  ```
 import org.openqa.selenium.*
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
 
+// declarando o driver
 val driver: WebDriver
-driver =  ChromeDriver()
+// utilizando o ChromeOptions para definir PageLoadStrategy, que espera a pagina carregar como inteira.
+val chromeOptions = ChromeOptions()
+chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER)
+driver =  ChromeDriver(chromeOptions)
+// configurando a espera máxima em 20 segundos.
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS)
+// carregando a pagina no browser.
 driver.get("http://automationpractice.com/index.php")
  ```
  
