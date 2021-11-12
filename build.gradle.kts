@@ -27,6 +27,11 @@ dependencies {
     testImplementation("com.github.javafaker:javafaker:1.0.2")
     testImplementation("io.qameta.allure:allure-junit5:2.16.1")
     implementation("io.qameta.allure:allure-okhttp3:2.16.1")
+
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation("org.seleniumhq.selenium:selenium-java:4.0.0")
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
+    implementation("org.seleniumhq.selenium:selenium-chrome-driver:4.0.0")
 }
 
 configure<JavaPluginConvention> {

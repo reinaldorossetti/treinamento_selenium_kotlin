@@ -1,4 +1,6 @@
 package com.automationpractice.pages.carrinho
 
-class ShoppingCartScreen {
+import com.automationpractice.core.BaseCore
+
+open class ShoppingCartScreen: BaseCore() {
 }

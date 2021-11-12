@@ -30,7 +30,7 @@ val chromeOptions = ChromeOptions()
 chromeOptions.setPageLoadStrategy(PageLoadStrategy.EAGER)
 driver =  ChromeDriver(chromeOptions)
 // configurando a espera máxima em 20 segundos.
-driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS)
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(25))
 // carregando a pagina no browser.
 driver.get("http://automationpractice.com/index.php")
  ```
