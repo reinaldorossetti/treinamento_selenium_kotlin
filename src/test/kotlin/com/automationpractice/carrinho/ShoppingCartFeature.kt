@@ -11,11 +11,7 @@ class ShoppingCartFeature {
     private val driver = SeleniumDriver().setChromeDriver()
 
     @AfterAll
-    fun quit(){
-        if (driver!=null){
-            driver.quit()
-        }
-    }
+    fun quit() = driver.quit()
 
     @Test
     fun adicionandoProdutoAoCarrinho(){
