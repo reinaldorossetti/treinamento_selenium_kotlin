@@ -2,14 +2,22 @@ package com.automationpractice.core
 
 import org.openqa.selenium.PageLoadStrategy
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.interactions.Actions
+import java.sql.Driver
 import java.time.Duration
 
 /**
  * Classe BaseCore contém funções básicas para as pages.
  */
-open class BaseCore {
+open class BaseCore(open val driver: WebDriver) {
+
+    fun WebElement.actionClick(){
+        val action = Actions(driver)
+        action.moveToElement(this).click().build().perform()
+    }
 
 }
 

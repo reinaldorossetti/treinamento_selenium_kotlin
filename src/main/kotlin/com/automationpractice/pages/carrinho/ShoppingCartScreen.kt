@@ -2,8 +2,9 @@ package com.automationpractice.pages.carrinho
 
 import com.automationpractice.core.BaseCore
 import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
 
-open class ShoppingCartScreen: BaseCore() {
+open class ShoppingCartScreen(driver: WebDriver) : BaseCore(driver) {
     val elemInputPesquisar: By = By.id("search_query_top")
     val elemBtnPesquisar: By = By.cssSelector("button[name=\"submit_search\"]")
     val elemLinkAddToCard: By = By.cssSelector("a[title=\"Printed Summer Dress\"]")
