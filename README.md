@@ -11,14 +11,19 @@ No link abaixo mostra a estrutura do Selenium:
 https://www.selenium.dev/documentation/webdriver/understanding_the_components/
 
 Terminologia:
-API: Interface de programação de aplicativo. Este é o conjunto de “comandos” que você usar para manipular o WebDriver.
-Biblioteca: um módulo de código que contém as APIs e o código necessário para implementá-las. As bibliotecas são específicas 
-para cada ligação de linguagem, por exemplo, arquivos .jar para Java, arquivos .dll para .NET, etc.
-Driver: Responsável por controlar o navegador atual. A maioria dos drivers é criada pelos próprios fornecedores de navegadores. 
-Os drivers geralmente são módulos executáveis que são executados no sistema com o próprio navegador, não no sistema que executa o conjunto de testes. (Embora possam ser o mesmo sistema.) NOTA: Algumas pessoas se referem aos drivers como proxies.
-Framework: Uma biblioteca adicional usada como suporte para suítes WebDriver. Essas estruturas podem ser estruturas de teste, 
-como JUnit ou NUnit. Eles também podem ser estruturas que suportam recursos de linguagem natural, como Cucumber ou Robotium. 
-Frameworks também podem ser escritos e usados para coisas como manipulação ou configuração do sistema em teste, 
+API: Interface de programação de aplicativo. Este é o conjunto de “comandos” que você usar para manipular o WebDriver.  
+
+Biblioteca: um módulo de código que contém as APIs e o código necessário para implementá-las. As bibliotecas são específicas   
+para cada ligação de linguagem, por exemplo, arquivos .jar para Java, arquivos .dll para .NET, etc.  
+
+Driver: Responsável por controlar o navegador atual. A maioria dos drivers é criada pelos próprios fornecedores de navegadores.   
+
+Os drivers geralmente são módulos executáveis que são executados no sistema com o próprio navegador, não no sistema que executa o conjunto de testes. (Embora possam ser o mesmo sistema.) NOTA: Algumas pessoas se referem aos drivers como proxies.  
+
+Framework: Uma biblioteca adicional usada como suporte para suítes WebDriver. Essas estruturas podem ser estruturas de teste,   
+como JUnit ou NUnit. Eles também podem ser estruturas que suportam recursos de linguagem natural, como Cucumber ou Robotium.   
+
+Frameworks também podem ser escritos e usados para coisas como manipulação ou configuração do sistema em teste,   
 criação de dados, oráculos de teste, etc.
 
 
