@@ -14,9 +14,7 @@ class ShoppingCartActions(override var driver: WebDriver) : ShoppingCartScreen(d
     fun addToCard(value: String="Add to cart"){
 
         val elemNovo = driver.findElements(elemLinkAddToCard)
-        elemNovo.forEach {
-            println(it.text)
-        }
+        elemNovo.forEach { println(it.text) }
         elemNovo.first().actionClick()
         val elemCheckout = driver.findElement(elemLinkCheckout)
         if (elemCheckout.text.equals(value)){
