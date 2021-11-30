@@ -2,7 +2,7 @@ package com.automationpractice.pages.carrinho
 
 import org.openqa.selenium.WebDriver
 
-class ShoppingCartActions(override var driver: WebDriver) : ShoppingCartScreen(driver) {
+class ShoppingCartActions(): ShoppingCartScreen() {
 
     fun pesquisar(valor: String){
         driver.findElement(elemInputPesquisar).let {

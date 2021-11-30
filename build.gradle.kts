@@ -21,6 +21,8 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("org.hamcrest:hamcrest:2.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.5.20-M1")
+    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test
+    implementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
     testImplementation("io.rest-assured:rest-assured:4.4.0")
     testImplementation("io.rest-assured:kotlin-extensions:4.4.0")
     testImplementation("io.rest-assured:json-schema-validator:4.4.0")
