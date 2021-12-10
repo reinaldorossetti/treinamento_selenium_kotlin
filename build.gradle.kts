@@ -21,7 +21,6 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("org.hamcrest:hamcrest:2.2")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5:1.5.20-M1")
-    // https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test
     implementation("org.jetbrains.kotlin:kotlin-test:1.6.0")
     testImplementation("io.rest-assured:rest-assured:4.4.0")
     testImplementation("io.rest-assured:kotlin-extensions:4.4.0")
@@ -30,6 +29,9 @@ dependencies {
     testImplementation("io.qameta.allure:allure-junit5:2.16.1")
     implementation("io.qameta.allure:allure-okhttp3:2.16.1")
 
+    // frameworks de teste.
+    // https://mvnrepository.com/artifact/io.appium/java-client
+    implementation("io.appium:java-client:8.0.0-beta")
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation("org.seleniumhq.selenium:selenium-java:4.0.0")
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver
