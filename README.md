@@ -23,8 +23,7 @@ Os drivers geralmente são módulos executáveis que são executados no sistema 
 Framework: Uma biblioteca adicional usada como suporte para suítes WebDriver. Essas estruturas podem ser estruturas de teste,   
 como JUnit ou NUnit. Eles também podem ser estruturas que suportam recursos de linguagem natural, como Cucumber ou Robotium.   
 
-Frameworks também podem ser escritos e usados para coisas como manipulação ou configuração do sistema em teste,   
-criação de dados, oráculos de teste, etc.
+Frameworks também podem ser escritos e usados para coisas como manipulação ou configuração do sistema em teste.
 
 
 ## Primeira Aula

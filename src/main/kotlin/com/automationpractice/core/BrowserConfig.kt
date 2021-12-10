@@ -12,14 +12,21 @@ class BrowserConfig(){
 
     fun setChrome(): WebDriver {
         val chromeOptions = ChromeOptions().apply {
-            this.setPageLoadStrategy(PageLoadStrategy.NORMAL)
+           setPageLoadStrategy(PageLoadStrategy.NORMAL)
         }
         val driver = ChromeDriver(chromeOptions)
         driver.manage().apply {
-            this.timeouts().implicitlyWait(Duration.ofSeconds(timeout))
-            this.timeouts().pageLoadTimeout(Duration.ofSeconds(timeout))
-            this.window().maximize()
+            timeouts().implicitlyWait(Duration.ofSeconds(timeout))
+            timeouts().pageLoadTimeout(Duration.ofSeconds(timeout))
+            window().maximize()
         }
         return driver
     }
 }
+
+/*
+fun main(){
+    val driver = BrowserConfig().setChrome()
+    driver.get("https://www.google.com")
+}
+*/

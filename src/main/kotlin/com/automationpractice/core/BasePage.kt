@@ -94,3 +94,10 @@ open class BasePage(open var driver: WebDriver) {
     }
 
 }
+
+/*
+fun main(){
+    val driver = BrowserConfig().setChrome()
+    val base = BasePage(driver)
+    base.visit("/")
+}*/
