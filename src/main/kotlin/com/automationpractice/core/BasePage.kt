@@ -2,8 +2,6 @@ package com.automationpractice.core
 
 import io.appium.java_client.pagefactory.AppiumFieldDecorator
 import org.openqa.selenium.*
-import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.interactions.Actions
 import org.openqa.selenium.support.PageFactory
 import org.openqa.selenium.support.ui.ExpectedConditions
@@ -13,7 +11,8 @@ import java.time.Duration
 import kotlin.test.fail
 
 /**
- * Classe BaseCore contém funções básicas para as pages.
+ * Classe BaseCore contém funções globais básicas para as pages.
+ * Funções específicas devem esta na Page.
  */
 open class BasePage(open var driver: WebDriver) {
 
@@ -36,7 +35,7 @@ open class BasePage(open var driver: WebDriver) {
 
     fun find(element: WebElement, focus: Boolean = false): WebElement {
         if (focus) Actions(driver).moveToElement(element).build().perform()
-        return wait.until(ExpectedConditions.elementToBeClickable(element))
+        return wait.until(ExpectedConditions.visibilityOf(element))
     }
 
     fun sendKeys(element: WebElement, text: String, focus: Boolean = false) {
@@ -55,7 +54,7 @@ open class BasePage(open var driver: WebDriver) {
      * A funcao clickJS realiza o click via javascript.
      * @param element passa o elemento mapeado no factory.
      */
-    fun clickJS(element: WebElement) {
+    fun clickJavaScript(element: WebElement) {
         (driver as JavascriptExecutor).executeScript("arguments[0].click();", element)
     }
 
@@ -64,26 +63,9 @@ open class BasePage(open var driver: WebDriver) {
      * @param locator passar o elemento via By do selenium.
      * @param text passar o texto visivel que deseja selecionar.
      */
-    fun selectByVisibleText(locator: By, text: String) {
-        val element = driver.findElement(locator)
-        if (element != null) { clickJS(element) }
+    fun selectByVisibleText(element: WebElement, text: String) {
+        if (element != null) { clickJavaScript(element) }
         Select(element).selectByVisibleText(text)
     }
 
-}
-
-class BrowserConfig(){
-    val timeout = 30L
-    fun setChrome(): WebDriver {
-        val chromeOptions = ChromeOptions().apply {
-            this.setPageLoadStrategy(PageLoadStrategy.EAGER)
-        }
-        val driver = ChromeDriver(chromeOptions)
-        driver.manage().apply {
-            this.timeouts().implicitlyWait(Duration.ofSeconds(timeout))
-            this.timeouts().pageLoadTimeout(Duration.ofSeconds(timeout))
-            this.window().maximize()
-        }
-        return driver
-    }
 }
