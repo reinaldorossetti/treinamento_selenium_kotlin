@@ -13,6 +13,7 @@ import kotlin.test.fail
 /**
  * Classe BaseCore contém funções globais básicas para as pages.
  * Funções específicas devem esta na Page.
+ * Passar o elemento mapeado sempre para a BasePage.
  */
 open class BasePage(open var driver: WebDriver) {
 
@@ -24,25 +25,49 @@ open class BasePage(open var driver: WebDriver) {
         PageFactory.initElements(AppiumFieldDecorator(driver, Duration.ofSeconds(timeout)), this)
     }
 
+    /**
+     * A função visit realiza o click e espera a condição ser possível realizar o clique.
+     * @param urlSite url parcial do site.
+     */
     fun visit(urlSite: String){
         driver.get(baseURL + urlSite)
     }
 
+    /**
+     * A função click realiza o click e espera a condição ser possível realizar o clique.
+     * @param element passa o elemento mapeado no factory.
+     * @param focus passar true para focar no elemento, false é o padrão.
+     */
     fun click(elem: WebElement, focus: Boolean = false){
         val element = wait.until(ExpectedConditions.elementToBeClickable(elem))
         Actions(driver).moveToElement(element).click().build().perform()
     }
 
+    /**
+     * A função find realiza busca e espera a condição do elemento ser visível.
+     * @param element passa o elemento mapeado no factory.
+     * @param focus passar true para focar no elemento, false é o padrão.
+     */
     fun find(element: WebElement, focus: Boolean = false): WebElement {
         if (focus) Actions(driver).moveToElement(element).build().perform()
         return wait.until(ExpectedConditions.visibilityOf(element))
     }
 
+    /**
+     * A função find realiza busca e espera a condição do elemento ser visível.
+     * @param element passa o elemento mapeado no factory.
+     * @param text passar o texto que preencher no campo.
+     * @param focus passar true para focar no elemento, false é o padrão.
+     */
     fun sendKeys(element: WebElement, text: String, focus: Boolean = false) {
         if (focus) Actions(driver).moveToElement(element).build().perform()
         wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(text)
     }
 
+    /**
+     * A função contains verifica se o elemento contém o texto esperado.
+     * @param text passar o texto que vai validar no elemento.
+     */
     fun WebElement.contains(text: String) {
         when (this.text.contains(text)) {
             true -> println("Elemento encontrado na página.")
@@ -64,7 +89,7 @@ open class BasePage(open var driver: WebDriver) {
      * @param text passar o texto visivel que deseja selecionar.
      */
     fun selectByVisibleText(element: WebElement, text: String) {
-        if (element != null) { clickJavaScript(element) }
+        clickJavaScript(element)
         Select(element).selectByVisibleText(text)
     }
 

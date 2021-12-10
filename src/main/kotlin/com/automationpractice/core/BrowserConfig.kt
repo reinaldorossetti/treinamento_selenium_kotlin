@@ -12,7 +12,7 @@ class BrowserConfig(){
 
     fun setChrome(): WebDriver {
         val chromeOptions = ChromeOptions().apply {
-            this.setPageLoadStrategy(PageLoadStrategy.EAGER)
+            this.setPageLoadStrategy(PageLoadStrategy.NORMAL)
         }
         val driver = ChromeDriver(chromeOptions)
         driver.manage().apply {

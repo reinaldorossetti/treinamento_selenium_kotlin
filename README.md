@@ -37,8 +37,8 @@ https://mvnrepository.com/repos/central
 
 ### 2. Classes  
 main >> nome_do_pacote >> nome_da_feature_page    
-Actions => Classe aonde a gente vai realizar as ações.   
-Screen => Classe aonde vamos mapear os elementos.    
+Actions => Classe aonde a gente vai realizar as ações.  
+Screen => Classe aonde vamos mapear os elementos.  
 PageBase => Classe aonde vai conter funções genericas.  
 
 ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
@@ -46,6 +46,7 @@ ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
 test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.   
 
 ### 3. Instancia do Driver Configuração:  
+https://www.selenium.dev/pt-br/documentation/webdriver/capabilities/shared/
  ```
 import org.openqa.selenium.*
 import org.openqa.selenium.chrome.ChromeDriver
@@ -55,7 +56,7 @@ import org.openqa.selenium.chrome.ChromeOptions
 class BrowserConfig(){
     fun setChrome(): WebDriver {
         val chromeOptions = ChromeOptions().apply {
-            this.setPageLoadStrategy(PageLoadStrategy.EAGER)
+            this.setPageLoadStrategy(PageLoadStrategy.NORMAL)
         }
         val driver = ChromeDriver(chromeOptions)
         driver.manage().apply {
