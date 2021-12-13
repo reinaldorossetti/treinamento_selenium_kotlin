@@ -38,7 +38,6 @@ https://mvnrepository.com/repos/central
 main >> nome_do_pacote >> nome_da_feature_page    
 Actions => Classe aonde a gente vai realizar as ações.  
 Screen => Classe aonde vamos mapear os elementos.  
-<<<<<<< HEAD
 PageBase => Classe aonde vai conter funções genericas.
 
 ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
