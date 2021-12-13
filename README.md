@@ -126,7 +126,7 @@ https://www.selenium.dev/documentation/webdriver/elements/select_elements/
 Actions para mover para o elemento:
 https://www.selenium.dev/documentation/webdriver/actions_api/mouse/
 
-Primeira Aula - Realizando o Pesquisar:  
+Primeira Aula - Realizando a Pesquisar:  
 https://www.youtube.com/embed/gGjHkR0lrAQ
 
 
