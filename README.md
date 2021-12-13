@@ -54,7 +54,6 @@ ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
 test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.   
 
 ### 3. Instancia do Driver Configuração:  
->>>>>>> 0b1c9de762bd9f8c844e9203a744502b442d03d4
 https://www.selenium.dev/pt-br/documentation/webdriver/capabilities/shared/
  ```
 import org.openqa.selenium.*
