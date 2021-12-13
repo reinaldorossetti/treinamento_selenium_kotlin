@@ -1,6 +1,7 @@
 package com.seleniumVsCypress
 
-import com.automationpractice.core.BaseCore
+import com.automationpractice.core.BasePage
+import com.automationpractice.core.BrowserConfig
 import org.junit.jupiter.api.*
 import org.openqa.selenium.PageLoadStrategy
 import org.openqa.selenium.WebDriver
@@ -9,9 +10,9 @@ import org.openqa.selenium.chrome.ChromeOptions
 import java.time.Duration
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class TesteBatalha: BaseCore() {
+class TesteBatalha: BasePage() {
 
-    var cy = BaseCore().driver
+    var cy = BrowserConfig().setChrome()
 
     @AfterAll
     fun quit() = cy.quit()

@@ -2,30 +2,22 @@ package com.automationpractice.pages.carrinho
 
 import org.openqa.selenium.WebDriver
 
-class ShoppingCartActions(): ShoppingCartScreen() {
+class ShoppingCartActions(driver: WebDriver) : ShoppingCartScreen(driver) {
 
     fun pesquisar(valor: String){
-        driver.findElement(elemInputPesquisar).let {
-            it.clear(); it.sendKeys(valor)
-        }
-        driver.findElement(elemBtnPesquisar).click()
+        elemInputSearch.apply { clear(); sendKeys(valor)}
+        click(elemBtnSearch, true)
     }
 
     fun addToCard(value: String="Add to cart"){
-
-        val elemNovo = driver.findElements(elemLinkAddToCard)
-        elemNovo.forEach { println(it.text) }
-        elemNovo.first().actionClick()
-        val elemCheckout = driver.findElement(elemLinkCheckout)
-        if (elemCheckout.text.equals(value)){
-            println("validacao com sucesso!")
-        }
-        elemCheckout.actionClick()
-        driver.findElement(elemAddToCheckout).click()
+        clickByJS(elemLinkAddToCard)
+        find(elemBtnCheckout).contains(value)
+        click(find(elemBtnCheckout))
+        click(elemLinkAddToCheckout)
     }
 
-    fun validarCarrinho(): String {
-        return driver.findElement(elemQuatidadeProduto).text
+    fun validarCarrinho(texto: String) {
+        elemSpanProductsQuantity.contains(texto)
     }
 
 }
