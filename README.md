@@ -109,8 +109,7 @@ https://github.com/SeleniumHQ/selenium/wiki/PageFactory
 ```
 @Test
 fun adicionandoProdutoAoCarrinho(){
-    // carregando a pagina no browser.
-    driver.get("http://automationpractice.com/index.php")
+    base.visit("/")
     val shoppingCartActions = ShoppingCartActions()
     shoppingCartActions.pesquisar("Dress")
     shoppingCartActions.addToCard()
