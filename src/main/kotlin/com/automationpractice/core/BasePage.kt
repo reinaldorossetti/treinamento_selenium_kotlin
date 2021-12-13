@@ -21,6 +21,9 @@ open class BasePage(open var driver: WebDriver) {
     private val timeout = 30L
     private var wait: WebDriverWait = WebDriverWait(driver, Duration.ofSeconds(timeout))
 
+    /*
+    Usando o page factory do Appium client, pra definir tempo dos elementos.
+     */
     init {
         PageFactory.initElements(AppiumFieldDecorator(driver, Duration.ofSeconds(timeout)), this)
     }
@@ -51,6 +54,17 @@ open class BasePage(open var driver: WebDriver) {
     fun find(element: WebElement, focus: Boolean = false): WebElement {
         if (focus) Actions(driver).moveToElement(element).build().perform()
         return wait.until(ExpectedConditions.visibilityOf(element))
+    }
+
+    /**
+     * A função find realiza busca e espera a condição do elemento ser visível.
+     * @param element passa o elemento mapeado no factory.
+     * @param focus passar true para focar no elemento, false é o padrão.
+     */
+    fun find(element: By, focus: Boolean = false): WebElement {
+        val elem = wait.until(ExpectedConditions.visibilityOfElementLocated(element))
+        if (focus) Actions(driver).moveToElement(elem).build().perform()
+        return elem
     }
 
     /**
