@@ -127,6 +127,6 @@ Actions para mover para o elemento:
 https://www.selenium.dev/documentation/webdriver/actions_api/mouse/
 
 Primeira Aula - Realizando o Pesquisar:  
-https://www.youtube.com/watch?v=gGjHkR0lrAQ
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gGjHkR0lrAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
