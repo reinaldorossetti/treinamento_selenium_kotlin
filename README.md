@@ -38,6 +38,7 @@ https://mvnrepository.com/repos/central
 main >> nome_do_pacote >> nome_da_feature_page    
 Actions => Classe aonde a gente vai realizar as ações.  
 Screen => Classe aonde vamos mapear os elementos.  
+<<<<<<< HEAD
 PageBase => Classe aonde vai conter funções genericas.
 
 ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
@@ -45,6 +46,15 @@ ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
 test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.
 
 ### 3. Instancia do Driver Configuração:
+=======
+PageBase => Classe aonde vai conter funções genericas.  
+
+ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
+
+test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.   
+
+### 3. Instancia do Driver Configuração:  
+>>>>>>> 0b1c9de762bd9f8c844e9203a744502b442d03d4
 https://www.selenium.dev/pt-br/documentation/webdriver/capabilities/shared/
  ```
 import org.openqa.selenium.*
@@ -129,4 +139,62 @@ Primeira Aula - Adicionando o produto ao carrinho:
 Vídeo 01 - Aula Mostrando a Estrutura do nosso projeto e os comandos básicos.  
 https://www.youtube.com/embed/gGjHkR0lrAQ  
 
+<<<<<<< HEAD
+=======
+### 4. Mapeamos o elemento e fazemos as funções, o padrão geralmente utilizando no Kotlin\Java é usando o By.  
+Deixei um padrão para o elemento, pois é sempre complicado dar nome as coisas:
+elem => Define o que um elemento e quando digitar elem vai listar todos os elementos.
+Tipo de Elemento => Define o tipo do elemento Link, Button (Btn), Span.
+Nome que simboliza o que o elemento faz.
+
+```kotlin
+    val elemInputSearch: By = By.id("search_query_top")
+    val elemBtnSearch: By = By.cssSelector("button[name=\"submit_search\"]")
+    val elemLinkAddToCard: By = By.cssSelector("a[title=\"Printed Summer Dress\"]")
+    val elemBtnCheckout: By = By.cssSelector("form[id=\"buy_block\"] button[name=\"Submit\"] span")
+    val elemLinkAddToCheckout: By = By.cssSelector("a[title=\"Proceed to checkout\"]")
+    val elemSpanProductsQuantity: By = By.cssSelector("#cart_title span[id=summary_products_quantity]")
+```
+
+Page factory
+https://github.com/SeleniumHQ/selenium/wiki/PageFactory
+```kotlin
+    @FindBy(id = "search_query_top")
+    lateinit var elemBtnSearch: WebElement
+    @FindBy(name = "submit_search")
+    lateinit var elemBtnSearch: WebElement
+    @FindBy(css = "a[title=\"Printed Summer Dress\"]")
+    lateinit var elemLinkAddToCard: WebElement
+    @FindBy(css = "button[name=\"Submit\"] span")
+    lateinit var elemBtnCheckout: WebElement
+    @FindBy(css = "a[title=\"Proceed to checkout\"]")
+    lateinit var elemLinkAddToCheckout: WebElement
+    @FindBy(css = "#cart_title span[id=summary_products_quantity]")
+    lateinit var elemSpanProductsQuantity: WebElement
+```
+
+
+### 5. Criamos as nossas chamadas dos testes utilizando o Junit.
+```
+@Test
+fun adicionandoProdutoAoCarrinho(){
+    base.visit("/")
+    val shoppingCartActions = ShoppingCartActions()
+    shoppingCartActions.pesquisar("Dress")
+    shoppingCartActions.addToCard()
+    assertEquals("1 Product", shoppingCartActions.validarCarrinho())
+}
+``` 
+Procurando um elemento:
+https://www.selenium.dev/documentation/webdriver/elements/
+
+Uso do selecionar valor no combobox:
+https://www.selenium.dev/documentation/webdriver/elements/select_elements/
+
+Actions para mover para o elemento:
+https://www.selenium.dev/documentation/webdriver/actions_api/mouse/
+
+Primeira Aula - Adicionando o produto ao carrinho:  
+Vídeo 01 - Aula Mostrando a Estrutura do nosso projeto e os comandos básicos.  
+https://www.youtube.com/embed/gGjHkR0lrAQ  
 
