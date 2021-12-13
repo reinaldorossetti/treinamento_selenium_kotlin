@@ -44,11 +44,10 @@ ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
 
 test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.
 
-### 3. Instancia do Driver Configuração:
-=======
-PageBase => Classe aonde vai conter funções genericas.  
+### 3. Instancia do Driver Configuração:  
+PageBase => Classe aonde vai conter funções genericas.   
 
-ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage
+ShoppingCartFeature >> ShoppingCartActions >> ShoppingCartScreen >> BasePage  
 
 test >> nome_do_pacote >> carrinho_de_compra >> Vai conter as classes que faz a chamada dos nossos testes.   
 
