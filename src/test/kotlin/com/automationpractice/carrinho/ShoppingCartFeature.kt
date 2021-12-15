@@ -4,25 +4,24 @@ import com.automationpractice.core.BasePage
 import com.automationpractice.core.BrowserConfig
 import com.automationpractice.pages.carrinho.ShoppingCartActions
 import org.junit.jupiter.api.*
+import kotlin.test.assertEquals
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class ShoppingCartFeature {
 
-    val driver = BrowserConfig().setChrome()
-    val pageCart = ShoppingCartActions(driver)
-    val base = BasePage(driver)
-
-    @BeforeAll()
-    fun beforeTests(){
-    }
+    private val driver = BrowserConfig().setChrome()
+    private val pageCart = ShoppingCartActions(driver)
+    private val base = BasePage(driver)
 
     @AfterAll
-    fun quit() { driver.quit() }
+    fun quit() = driver.quit()
 
     @Test
     fun adicionandoProdutoAoCarrinho(){
         base.visit("/")
         pageCart.realizarABusca()
+        pageCart.adicionaProdutoAoCarrinho()
+        assertEquals("1 Product", pageCart.validarCarrinho())
     }
 
 }
