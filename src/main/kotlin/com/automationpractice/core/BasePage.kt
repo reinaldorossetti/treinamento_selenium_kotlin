@@ -41,7 +41,7 @@ open class BasePage(open var driver: WebDriver) {
      * @param element passa o elemento mapeado no factory.
      * @param focus passar true para focar no elemento, false é o padrão.
      */
-    fun click(elem: WebElement, focus: Boolean = false){
+    fun click(elem: WebElement){
         val element = wait.until(ExpectedConditions.elementToBeClickable(elem))
         Actions(driver).moveToElement(element).click().build().perform()
     }
